@@ -13,27 +13,34 @@ _Secure your supply chain, understand dependencies in your environment, know abo
 
 </header>
 
-## Step 4: Enable and trigger Dependabot version updates
+## Finish
 
-_Nicely done!_ :partying_face:
+_Congratulations friend, you've completed this course!_
 
-You now have automated the process for Dependabot to alert and create pull requests to update your dependencies! At this point, you only need to review the pull request and then merge it to stay on top of your security alerts.
+<img src="https://octodex.github.com/images/welcometocat.png" alt=celebrate width=300 align=right>
 
-The security updates feature helps automate the process to resolve alerts, but what about just keeping up-to-date with version updates? We can have the same automation to update our dependencies for updated versions using the Dependabot version updates feature.
+Here's a recap of all the tasks you've accomplished in your repository:
 
-**What are Dependabot version updates?**: In addition to security alerts, Dependabot can also take the effort out of maintaining your dependencies. You can use it to ensure that your repository automatically keeps up with the latest releases of the packages and applications it depends on. Just like security alerts, Dependabot will identify an outdated dependency and create a pull request to update the manifest to the latest version of the dependency.
+- You've learned how to view and use dependency graph.
+- You've learned how to enable and use Dependabot alerts.
+- You've learned how to enable and use Dependabot security updates.
+- You've learned how to enable and use Dependabot version updates.
 
-Let's see how this works!
+### Additional learning and resources
 
-### :keyboard: Activity: Enable and trigger Dependabot version updates
+- [Dependency graph](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph)
+- [Exploring the dependencies of a repository](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/exploring-the-dependencies-of-a-repository)
+- [About supply chain security](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-supply-chain-security)
+- [Dependabot alerts](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
+- [GitHub Advisory Database](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/browsing-security-advisories-in-the-github-advisory-database)
 
-1. Navigate to the `Settings` tab, select `Code security and analysis`, and enable the `Dependabot version updates`.
-   - A new file editor opens with pre-poplulated contents. The file is called `dependabot.yml`.
-1. Add `nuget` to the `package-ecosystem`.
-1. Change the `directory` to `/code/`. (The `dependabot.yml` file should look like this)
-   ![Screen Shot 2022-09-27 at 6 52 45 AM](https://user-images.githubusercontent.com/26442605/192545528-dfc33648-94ce-4421-8710-c5bb0a41b0ec.png)
-1. Click `Commit changes` directly to the main branch.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+### What's next?
+
+- Learn more about securing your supply chain by reading: [Securing your supply chain](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-supply-chain-security).
+- [We'd love to hear what you thought of this course](https://github.com/skills/.github/discussions).
+- [Learn another GitHub skill](https://github.com/skills).
+- [Read the Get started with GitHub docs](https://docs.github.com/en/get-started).
+- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 <footer>
 
