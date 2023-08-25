@@ -13,23 +13,26 @@ _Secure your supply chain, understand dependencies in your environment, know abo
 
 </header>
 
-## Step 3: Enable and trigger Dependabot security updates
+## Step 4: Enable and trigger Dependabot version updates
 
-_Nice work enabling, viewing, and creating Dependabot alerts :sparkles:_
+_Nicely done!_ :partying_face:
 
-Enabling Dependabot alerts on our repository was a great step toward improving our code security, but we still had to manually select an alert and then manually select the option to create the pull request. It would be nice to further improve the automation and maintenance of our dependencies! Well, with Dependabot security updates, we can do just that.
+You now have automated the process for Dependabot to alert and create pull requests to update your dependencies! At this point, you only need to review the pull request and then merge it to stay on top of your security alerts.
 
-**What are Dependabot security updates?**: When enabled, Dependabot will detect and fix vulnerable dependencies for you by opening pull requests automatically to resolve Dependabot alerts when they arise.
+The security updates feature helps automate the process to resolve alerts, but what about just keeping up-to-date with version updates? We can have the same automation to update our dependencies for updated versions using the Dependabot version updates feature.
 
-We manually created the pull request for the `Prototype Pollution in minimist` alert, but let's now enable Dependabot security updates to automate this process with the next alert!
+**What are Dependabot version updates?**: In addition to security alerts, Dependabot can also take the effort out of maintaining your dependencies. You can use it to ensure that your repository automatically keeps up with the latest releases of the packages and applications it depends on. Just like security alerts, Dependabot will identify an outdated dependency and create a pull request to update the manifest to the latest version of the dependency.
 
-### :keyboard: Activity: Enable and trigger Dependabot security updates
+Let's see how this works!
 
-1. Navigate to the `Settings` tab, select `Code security and analysis`, and enable the `Dependabot security updates`.
-1. Navigate to the `Pull requests` repository tab and select the newly created pull request titled **Bump axios from 0.21.1 to 0.21.2 in /code/src/AttendeeSite**.
-   - You may need to wait 30-60 seconds.
-1. Click the `Merge pull request` button.
-1. Click `Confirm merge`.
+### :keyboard: Activity: Enable and trigger Dependabot version updates
+
+1. Navigate to the `Settings` tab, select `Code security and analysis`, and enable the `Dependabot version updates`.
+   - A new file editor opens with pre-poplulated contents. The file is called `dependabot.yml`.
+1. Add `nuget` to the `package-ecosystem`.
+1. Change the `directory` to `/code/`. (The `dependabot.yml` file should look like this)
+   ![Screen Shot 2022-09-27 at 6 52 45 AM](https://user-images.githubusercontent.com/26442605/192545528-dfc33648-94ce-4421-8710-c5bb0a41b0ec.png)
+1. Click `Commit changes` directly to the main branch.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
