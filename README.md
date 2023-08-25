@@ -13,51 +13,48 @@ _Secure your supply chain, understand dependencies in your environment, know abo
 
 </header>
 
-## Step 1: Review and add dependencies using dependency graph
+## Step 2: Enable and view Dependabot alerts
 
-_Welcome to "Secure your repository's supply chain"! :wave:_
+_Nice work! :tada: You added and viewed a dependency with `dependency graph`!_
 
-**What's the big deal about securing your repository's supply chain?**: With the accelerated use of open source, most projects depend on hundreds of open-source dependencies. This poses a security problem: what if the dependencies you're using are vulnerable? You could be putting your users at risk of a supply chain attack. One of the most important things you can do to protect your supply chain is to patch your vulnerable dependencies and replace any malware.
+Given how many dependencies our repository is using, maintaining them needs to become an automated task. Keeping our code secure is a top priority, so one thing we need to do is set up a way to be notified when a dependency we are using is vulnerable or malware. We can do this by enabling Dependabot alerts!
 
-GitHub offers a range of features to help you understand the dependencies in your environment, know about vulnerabilities in those dependencies, and patch them. The supply chain features on GitHub are:
+**What are Dependabot alerts?**: Dependabot alerts tell you that your code depends on a package that is insecure. These Dependabot alerts reference the [GitHub Advisory Database](https://github.com/advisories), which contains a list of known security vulnerabilities and malware, grouped in two categories: **GitHub reviewed advisories** and **unreviewed advisories**.
 
-- Dependency graph
-- Dependency review
-- Dependabot alerts
-- Dependabot updates
-  - Dependabot security updates
-  - Dependabot version updates
+If your code depends on a package that has a security vulnerability, this can cause a range of problems for your project or the people who use it. You should upgrade to a secure version of the package as soon as possible. If your code uses malware, you need to replace the package with a secure alternative.
 
-**What is a dependency graph**: The dependency graph is a summary of the manifest and lock files stored in a repository and any dependencies that are submitted for the repository using the dependency submission API (beta). For each repository, it shows:
+Let's try this out with our newly added `follow-redirects` dependency!
 
-- Dependencies, the ecosystems and packages it depends on
-- Dependents, the repositories and packages that depend on it
+### :keyboard: Activity: View security advisories in the GitHub Advisory Database
 
-### :keyboard: Activity: Verify that dependency graph is enabled
+1. Navigate to the [GitHub Advisory Database](https://github.com/advisories).
+1. Type or paste `follow-redirects` into the search box.
+1. Click on any of the advisories that were found.
+1. Note the packages, impact, patches, workaround, and references for the advisory.
 
-**We recommend opening another browser tab to work through the following activities so you can keep these instructions open for reference.**
+Notice the list of advisories for our dependency! This can look scary but it's actually a good thing. It means that our dependency is actively being maintained and patches are being pushed to remove the vulnerability. If we had Dependabot alerts enabled, we could receive alerts when we need to update a dependency and act promptly to secure them.
+
+Let's enable Dependabot alerts on our repository!
+
+### :keyboard: Activity: Enable Dependabot alerts
 
 1. Navigate to the `Settings` tab.
 1. Click `Code security and analysis`.
-1. Verify/enable **Dependency graph**. (If the repo is private, you will enable it here. If the repo is public, it will be enabled by default)
+1. Click `Enable` Dependabot alerts (**Wait about 60 seconds and then click the `Security` tab at the top of the repository**).
+1. Review each of the `Dependabot` alerts under the `Vulnerability alerts` section.
 
-### :keyboard: Activity: Add a new dependency and view your dependency graph
+Dependabot has alerted us of vulnerabilities that need to be updated from the dependencies that we are using. Dependabot helps us address these vulnerabilities by creating pull requests for each one as we select and review the alert.
 
-1. Navigate to the `Code` tab and locate the `code/src/AttendeeSite` folder.
-1. Add the following content to the `package-lock.json` file after the third to last `}`
-   ```
-   ,
-    "follow-redirects": {
-      "version": "1.14.1",
-      "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.1.tgz",
-      "integrity": "sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg=="
-    }
-   ```
-1. Navigate to the `Insights` tab.
-1. Click `Dependency graph`.
-1. Review all new dependencies on the `Dependencies` hub.
-1. Search for `follow-redirects` and review the new dependency you just added.
-   ![Screen Shot 2022-10-17 at 3 37 36 PM](https://user-images.githubusercontent.com/6351798/196288729-734e3319-c5d7-4f35-a19c-676c12f0e27d.png)
+Let's see how this would work by using Dependabot to create a pull request for one of the alerts!
+
+### :keyboard: Activity: Create a pull request based on a Dependabot alert
+
+1. Select the `Prototype Pollution in minimist` alert under the `Dependabot alerts` section and click on the alert.
+1. Click the `Create Dependabot security update` button (**This will create a pull request for the fix and could take ~2 minutes**).
+1. Click the `Review security update` button. The pull request will be displayed.
+   - You can view the pull request and `Files changed` tab to review the update.
+1. Navigate back to the `Conversation` tab and click the `Merge pull request` button.
+1. Click `Confirm merge`.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
